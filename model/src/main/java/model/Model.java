@@ -36,7 +36,7 @@ public final class Model  implements IModel {
 	public Model(int level) throws IOException {
 		super();
 		Sprite.loadBuffers();
-		this.setMap(DAOMap.downloadMap(level));
+		this.setMap(DAOMap.BDD(level));
 		this.setTheCharacter(new TheCharacter(2, 1, this.map));
 	}
 	
