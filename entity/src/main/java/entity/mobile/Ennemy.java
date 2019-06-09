@@ -17,7 +17,7 @@ public class Ennemy extends MobileEntity{
 	
 	@SuppressWarnings("unused")
 	private static Permeability permeability = Permeability.PENETRABLE;
-	private static final char charImage ='E';
+	private static final char charImage ='e';
     private ControllerOrder lastWallTouched = ControllerOrder.NONE;
     
     /** The Constant SPRITE. */

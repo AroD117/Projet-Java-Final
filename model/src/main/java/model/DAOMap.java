@@ -17,7 +17,7 @@ import entity.mobile.*;
  *
  * @author Quentin Amram
  */
-public class DAOMapExtract {
+public class DAOMap {
 
 	private final Connection connection;
 	private static int x = 0, y = 0;
@@ -30,7 +30,7 @@ public class DAOMapExtract {
 	 * @throws SQLException
 	 *           the SQL exception
 	 */
-	public DAOMapExtract(final Connection connection) throws SQLException {
+	public DAOMap(final Connection connection) throws SQLException {
 		this.connection = connection;
 	}
 
@@ -47,11 +47,11 @@ public class DAOMapExtract {
 	public static final Map downloadMap(int level) throws IOException {
 		Map map = null;
 		try {
-			final String sql = "call level" + level;
+			final String sql = "SELECT map FROM map WHERE id =" + level;
 			final CallableStatement call = prepareCall(sql);
 			call.execute();
-			final ResultSet resultSet = call.getResultSet();
-			map = resultToMap(resultSet, level);
+			final ResultSet rs = call.getResultSet();
+			map = resultToMap(rs, level);
 			return map;
 			
 		} catch (final SQLException e) {
@@ -60,13 +60,13 @@ public class DAOMapExtract {
 		return null;
 	}
 	
-	private static Map resultToMap(final ResultSet result, int level) throws SQLException, IOException{
+	private static Map resultToMap(final ResultSet rs, int level) throws SQLException, IOException{
 
 		Map tempMap = new Map(level, new Entity[Map.getWidth()][Map.getHeight()]);
 
-		while (result.next()) {
+		while (rs.next()) {
 			
-			for(char ch : result.getString("item").toCharArray()) { 
+			for(char ch : rs.getString("map").toCharArray()) { 
 					if (x == Map.getWidth()) {
 						x = 0;
 						y++;
@@ -74,13 +74,13 @@ public class DAOMapExtract {
 					
 					tempMap.setOnMapXY(MotionlessEntityFactory.getFromDBSymbol(ch), x, y);
 
-					if(ch == 'B') {
+					if(ch == 'a') {
 						tempMap.add(new Boulder(x, y, tempMap));
 					}
-					if(ch == 'E') {
+					if(ch == 'b') {
 						tempMap.add(new Ennemy(x, y, tempMap));
 					}
-					if(ch == 'D') {
+					if(ch == 'd') {
 						tempMap.add(new Diamond(x, y, tempMap));
 						tempMap.increaseDiamondCount();
 					}

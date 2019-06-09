@@ -13,7 +13,7 @@ public class TheCharacter extends MobileEntity {
 
 	private static Permeability permeability = Permeability.BLOCKING;
 	private int ownedDiamond = 0;	
-	private final static char charImage = 'A';
+	private final static char charImage = 'o';
 	
 	private static final Sprite sprite = new Sprite(charImage, Sprite.spriteSheetCharacter, new Rectangle(0, 0, 16, 16));
 

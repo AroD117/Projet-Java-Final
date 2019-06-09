@@ -14,7 +14,7 @@ import entity.strategy.FallingObjectStrategy;
 public class Boulder extends MobileEntity{
 
 	private static FallingObjectStrategy strategy=new BoulderStrategy();
-	private static final char charImage ='B';
+	private static final char charImage ='c';
 	@SuppressWarnings("unused")
 	private static BoulderStrategy bStrat;
 	

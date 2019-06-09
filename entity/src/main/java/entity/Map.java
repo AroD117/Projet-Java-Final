@@ -10,7 +10,7 @@ import showboard2.showboard.ISquare;
 public class Map extends Observable {
 
 	private Entity[][] mapContent;
-	private static final int WIDTH = 32, HEIGHT = 16;
+	private static final int WIDTH = 51, HEIGHT = 31;
 	public static int diamondCount = 0;
 	private int level;
 	

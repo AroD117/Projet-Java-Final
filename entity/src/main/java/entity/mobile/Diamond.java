@@ -13,7 +13,7 @@ import entity.strategy.FallingObjectStrategy;
 public class Diamond extends MobileEntity{
 
 	private static FallingObjectStrategy strategy=new DiamondStrategy(); 
-	private static final char charImage ='D';
+	private static final char charImage ='d';
 	@SuppressWarnings("unused")
 	private static DiamondStrategy dStrat;
     
