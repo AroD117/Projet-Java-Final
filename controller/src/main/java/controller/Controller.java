@@ -23,7 +23,7 @@ public final class Controller implements IController {
 	/** The model. */
 	private IModel	model;
 
-	private int timer = 250;
+//	private int timer = 250;
 
 	/**
 	 * Instantiates a new controller.
@@ -78,7 +78,7 @@ public final class Controller implements IController {
 
 		this.setOrder(controllerOrder);
 		
-		Thread.sleep(timer);
+		//Thread.sleep(timer);
 		if(this.getModel().getTheCharacter().canMove(this.getOrder())) {
 			switch(this.getOrder()) {
 			case RIGHT:
@@ -112,7 +112,7 @@ public final class Controller implements IController {
 		while(this.getModel().getTheCharacter().isAlive()) {
 
 
-			Thread.sleep(timer);
+			//Thread.sleep(timer);
 			if(this.getModel().getTheCharacter().canMove(this.getOrder())) {
 				switch(this.getOrder()) {
 				case RIGHT:

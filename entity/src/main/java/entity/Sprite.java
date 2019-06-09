@@ -48,8 +48,8 @@ public class Sprite {
 	
 	public static void loadBuffers() {
 		try {
-			Sprite.spriteSheetCharacter = ImageIO.read(new File("C:\\Users\\Arthur\\git\\Projet-Java-Final\\masterpom\\entity\\Sprites\\personnage.png"));
-			Sprite.mapSheet = ImageIO.read(new File("C:\\Users\\Arthur\\git\\Projet-Java-Final\\masterpom\\entity\\Sprites\\SpriteSheet.png"));
+			Sprite.spriteSheetCharacter = ImageIO.read(new File("C:\\Users\\Arthur\\git\\Projet-Java-Final\\entity\\Sprites\\personnage.png"));
+			Sprite.mapSheet = ImageIO.read(new File("C:\\Users\\Arthur\\git\\Projet-Java-Final\\entity\\Sprites\\SpriteSheet.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());

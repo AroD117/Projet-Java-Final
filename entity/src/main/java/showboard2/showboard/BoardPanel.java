@@ -135,9 +135,9 @@ class BoardPanel extends JPanel implements Observer {
         graphics.fillOval(positionInfosX, positionInfosY, 40, 40);
         graphics.fillOval(positionInfosX + 30, positionInfosY, 40, 40);
         graphics.fillRect(positionInfosX + 15, positionInfosY + 1, 40, 39);
-
+		
         
-
+/*
         graphics.setColor(Color.black);
         graphics.drawOval(positionInfosX - 1, positionInfosY - 51, 42, 42);
         graphics.drawOval(positionInfosX + 29, positionInfosY - 51, 42, 42);
@@ -146,19 +146,20 @@ class BoardPanel extends JPanel implements Observer {
         graphics.fillOval(positionInfosX, positionInfosY - 50, 40, 40);
         graphics.fillOval(positionInfosX + 30, positionInfosY - 50, 40, 40);
         graphics.fillRect(positionInfosX + 15, positionInfosY - 49, 40, 39);
+*/
         
         
-
-
+        //timer
         graphics.setColor(Color.black);
         graphics.setFont(new Font("Arial", Font.PLAIN, 30));
-        graphics.drawString(timer, positionInfosX, positionInfosY - 20);
+        //graphics.drawString(timer, positionInfosX, positionInfosY - 20);
         graphics.drawString(diamondsLeft, positionInfosX, positionInfosY + 31);
-
+/*
         if(timeLeft == 0)
         {
             entity.mobile.MobileEntity.alive = false;
         }
+*/
         
     }
 

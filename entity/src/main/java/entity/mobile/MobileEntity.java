@@ -111,7 +111,6 @@ public abstract class MobileEntity extends Entity implements IPawn{
 		case UP:
 			System.out.println(this.getMap().getOnMapXY(this.getX(), this.getY()-1).getPermeability());
 			return this.getMap().getOnMapXY(this.getX(), this.getY()-1).getPermeability()==Permeability.PENETRABLE;
-			
 		case DOWN:
 			return this.getMap().getOnMapXY(this.getX(), this.getY()+1).getPermeability()==Permeability.PENETRABLE;
 		case RIGHT:

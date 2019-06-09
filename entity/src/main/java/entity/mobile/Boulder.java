@@ -19,7 +19,7 @@ public class Boulder extends MobileEntity{
 	private static BoulderStrategy bStrat;
 	
     /** The Constant SPRITE. */
-	 private static final Sprite sprite  = new Sprite(charImage, Sprite.mapSheet, new Rectangle(48, 0, 16, 16));
+	private static final Sprite sprite  = new Sprite(charImage, Sprite.mapSheet, new Rectangle(48, 0, 16, 16));
 	
 	public Boulder(int x, int y, Map map) throws IOException {
 		super(x, y, sprite, map, Permeability.BLOCKING);

@@ -8,7 +8,13 @@ public class MotionlessEntityFactory {
 	private static Spawnpoint spawnPoint = new Spawnpoint();
 	private static BreakableWall exit = new BreakableWall();
 	
-	public static MotionlessEntity[] motionlessEntity = {breakableWall, unbreakableWall, dugWall, exit, spawnPoint};
+	public static MotionlessEntity[] motionlessEntity = {
+			breakableWall, 
+			unbreakableWall, 
+			dugWall, 
+			exit, 
+			spawnPoint
+	};
 	
 	public static MotionlessEntity createBreakableWall() {
 		return breakableWall;

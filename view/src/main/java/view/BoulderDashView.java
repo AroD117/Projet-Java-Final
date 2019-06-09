@@ -64,7 +64,7 @@ public class BoulderDashView implements Runnable, KeyListener, IView {
 
 	@Override
 	public final void run() {
-		boardFrame = new BoardFrame("Мохамeд");
+		boardFrame = new BoardFrame("salut");
 		boardFrame.setDimension(new Dimension(entity.Map.getWidth(), entity.Map.getHeight()));
 		boardFrame.setDisplayFrame(this.closeView);
 		boardFrame.setSize(this.closeView.width * squareSize, this.closeView.height * squareSize);
