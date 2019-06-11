@@ -40,7 +40,7 @@ public class RandomStrategy extends EnnemyStrategy {
 		default:
 			randomOrder();
 			
-		return ControllerOrder.NONE;
+		return ControllerOrder.NOP;
 			
 		}
 	}

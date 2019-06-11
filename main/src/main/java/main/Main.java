@@ -7,11 +7,9 @@ package main;
 import java.io.IOException;
 
 import contract.IModel;
-import contract.IView;
 import controller.Controller;
-import entity.ControllerOrder;
 import model.Model;
-import view.BoulderDashView;
+import view.MainView;
 
 
 /**
@@ -33,7 +31,7 @@ public abstract class Main {
      */
     public static void main(final String[] args) throws IOException, InterruptedException {
         final IModel model = new Model(1);
-        final BoulderDashView bdv = new BoulderDashView(model.getMap(), model.getTheCharacter(), model.getMap().getMobileEntities());
+        final MainView bdv = new MainView(model.getMap(), model.getTheCharacter(), model.getMap().getMobileEntities());
         final Controller controller = new Controller(bdv, model);
         bdv.setOrderPerformer(controller);
         controller.play();

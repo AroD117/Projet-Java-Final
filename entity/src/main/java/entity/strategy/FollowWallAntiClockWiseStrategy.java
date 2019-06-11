@@ -13,7 +13,7 @@ public class FollowWallAntiClockWiseStrategy extends EnnemyStrategy {
 			return;
 		}
 		
-		if (currentItem.getLastWallTouched() == ControllerOrder.NONE) {
+		if (currentItem.getLastWallTouched() == ControllerOrder.NOP) {
 
 			if (currentItem.canMove(ControllerOrder.RIGHT)) {
 

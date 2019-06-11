@@ -90,7 +90,7 @@ public class TheCharacter extends MobileEntity {
 			return this.getMap().getOnMapXY(this.getX()+1,this.getY()).getPermeability()!=Permeability.BLOCKING;
 		case LEFT:
 			return this.getMap().getOnMapXY(this.getX()-1,this.getY()).getPermeability()!=Permeability.BLOCKING;
-		case NONE:
+		case NOP:
 			
 			default:
 				return true;
@@ -127,7 +127,7 @@ public class TheCharacter extends MobileEntity {
 				}
 			}
 			break;
-		case NONE:
+		case NOP:
 		default:
 			break;
 		}
@@ -171,14 +171,4 @@ return true;
 	}
 	
 	
-	/*@Override
-	public boolean isCrushed() {
-		for(MobileEntity item : this.getMap().getMobileEntities()) {
-			if(item.getSprite().getCharImage()=='E') {
-				if(this.getPosition().equals(item.getPosition()))
-					return true;
-			}
-		}
-		return super.isCrushed();
-	}*/
 }

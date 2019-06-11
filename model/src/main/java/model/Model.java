@@ -13,11 +13,7 @@ import entity.mobile.MobileEntity;
 import entity.mobile.TheCharacter;
 import showboard2.showboard.ISquare;
 
-/**
- * The Class Model.
- *
- * @author Quentin Amram
- */
+
 public final class Model  implements IModel {
 
 	/** The map. */

@@ -2,22 +2,20 @@ package entity.motionless;
 
 public class MotionlessEntityFactory {
 
-	private static BreakableWall breakableWall = new BreakableWall();
+	private static BrakableSurface breakableSurface = new BrakableSurface();
 	private static UnbreakableWall unbreakableWall = new UnbreakableWall();
-	private static DugWall dugWall = new DugWall();
-	private static Spawnpoint spawnPoint = new Spawnpoint();
-	private static BreakableWall exit = new BreakableWall();
+	private static BrokanSurface brokenSurface = new BrokanSurface();
+	private static BrakableSurface exit = new BrakableSurface();
 	
 	public static MotionlessEntity[] motionlessEntity = {
-			breakableWall, 
+			breakableSurface, 
 			unbreakableWall, 
-			dugWall, 
+			brokenSurface, 
 			exit, 
-			spawnPoint
 	};
 	
 	public static MotionlessEntity createBreakableWall() {
-		return breakableWall;
+		return breakableSurface;
 	}
 	
 	public static MotionlessEntity createUnbreakableWall() {
@@ -25,15 +23,12 @@ public class MotionlessEntityFactory {
 	}
 	
 	public static MotionlessEntity createDugWall() {
-		return dugWall;
+		return brokenSurface;
 	}
 	
-	public static MotionlessEntity createSpawnPoint() {
-		return spawnPoint;
-	}
 	
 	public static MotionlessEntity createExit() {
-		return breakableWall;
+		return breakableSurface;
 	}
 	
 	public static MotionlessEntity getFromDBSymbol(char symbol) {
@@ -43,6 +38,6 @@ public class MotionlessEntityFactory {
 				return motionlessEntity;
 			}
 		}
-		return dugWall;
+		return brokenSurface;
 	}
 }

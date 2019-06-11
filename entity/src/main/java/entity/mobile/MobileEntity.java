@@ -55,9 +55,6 @@ public abstract class MobileEntity extends Entity implements IPawn{
 	}
 	public void setX(int x) {
 		this.getPosition().x=x;
-		/*if(this.isCrushed()) {
-			this.die();
-		}*/
 	}
 	public void digDirt() {
 		
@@ -89,17 +86,6 @@ public abstract class MobileEntity extends Entity implements IPawn{
 		this.alive = false;
 		this.setHasMoved();
 	}
-	/*public boolean isCrushed() {
-		for(MobileEntity item : this.getMap().getMobileEntities()) {
-			if(item.getSprite().getCharImage()=='B'||item.getSprite().getCharImage()=='D') {
-				if(item.getPosition().x==this.getPosition().x && item.getPosition().y==this.getPosition().y-1 && item.isFalling()) {
-					return true;
-				}
-			}
-		}
-		return this.getMap().getOnMapXY(this.getX(), this.getY()).getPermeability()==Permeability.BLOCKING;
-	}*/
-	
 	
 	public boolean canMove(ControllerOrder direction) {
 		return this.mapAllowsMovementTo(direction) && this.itemsAllowMovementTo(direction);
@@ -117,7 +103,7 @@ public abstract class MobileEntity extends Entity implements IPawn{
 			return this.getMap().getOnMapXY(this.getX()+1, this.getY()).getPermeability()==Permeability.PENETRABLE;
 		case LEFT:
 			return this.getMap().getOnMapXY(this.getX()-1, this.getY()).getPermeability()==Permeability.PENETRABLE;
-		case NONE :
+		case NOP :
 			default:
 				return true;
 		}
@@ -167,7 +153,7 @@ public abstract class MobileEntity extends Entity implements IPawn{
 	}
 	
 	public ControllerOrder getLastWallTouched() {
-		return ControllerOrder.NONE;
+		return ControllerOrder.NOP;
 	}
 	
 	public void setLastWallTouched(ControllerOrder controllerOrder) {

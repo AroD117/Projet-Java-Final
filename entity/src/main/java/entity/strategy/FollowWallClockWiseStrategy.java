@@ -13,7 +13,7 @@ public class FollowWallClockWiseStrategy extends EnnemyStrategy {
 			return;
 		}
 		// first check until a wall is touched
-		if (currentPawn.getLastWallTouched() == ControllerOrder.NONE) {
+		if (currentPawn.getLastWallTouched() == ControllerOrder.NOP) {
 
 			if (currentPawn.canMove(ControllerOrder.LEFT)) {
 

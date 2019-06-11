@@ -11,7 +11,7 @@ import entity.Sprite;
 import entity.strategy.BoulderStrategy;
 import entity.strategy.FallingObjectStrategy;
 
-public class Boulder extends MobileEntity{
+public class Rock extends MobileEntity{
 
 	private static FallingObjectStrategy strategy=new BoulderStrategy();
 	private static final char charImage ='c';
@@ -21,7 +21,7 @@ public class Boulder extends MobileEntity{
     /** The Constant SPRITE. */
 	private static final Sprite sprite  = new Sprite(charImage, Sprite.mapSheet, new Rectangle(48, 0, 16, 16));
 	
-	public Boulder(int x, int y, Map map) throws IOException {
+	public Rock(int x, int y, Map map) throws IOException {
 		super(x, y, sprite, map, Permeability.BLOCKING);
 		sprite.loadImage();
 	}
@@ -65,7 +65,7 @@ public class Boulder extends MobileEntity{
 		case LEFT:
 			desiredPosition=new Point(this.getX()-1,this.getY());
 			break;
-		case NONE:
+		case NOP:
 			default:
 				return true;
 		}
@@ -77,6 +77,6 @@ public class Boulder extends MobileEntity{
 		}
 	}
 	public void strat(int x, int y) {
-		Boulder.strategy.followStrategy(this, this.getMap(), x, y);
+		Rock.strategy.followStrategy(this, this.getMap(), x, y);
 	}
 }

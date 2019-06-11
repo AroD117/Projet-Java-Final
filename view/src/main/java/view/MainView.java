@@ -19,10 +19,10 @@ import showboard2.showboard.BoardFrame;
 import entity.*;
 
 
-public class BoulderDashView implements Runnable, KeyListener, IView {
+public class MainView implements Runnable, KeyListener, IView {
 	
 	/** The Constant squareSize. */
-	private static final int squareSize = 50;
+	private static final int squareSize = 33;
 
 	/** The Constant closeView. */
 	private Rectangle      closeView = null;
@@ -39,7 +39,7 @@ public class BoulderDashView implements Runnable, KeyListener, IView {
 	private IController  orderPerformer;
 	private  BoardFrame boardFrame;
 
-	public BoulderDashView(final Map Map, final MobileEntity TheCharacter, ArrayList<MobileEntity> mE) throws IOException {
+	public MainView(final Map Map, final MobileEntity TheCharacter, ArrayList<MobileEntity> mE) throws IOException {
 	
 		this.setMap(Map);
 		this.setTheCharacter(TheCharacter);
@@ -107,7 +107,7 @@ public class BoulderDashView implements Runnable, KeyListener, IView {
 	@Override
 	public  void keyPressed(final KeyEvent keyEvent) {
 		try {
-			this.getOrderPerformer().orderPerform(BoulderDashView.keyCodeToControllerOrder(keyEvent.getKeyCode()));
+			this.getOrderPerformer().orderPerform(MainView.keyCodeToControllerOrder(keyEvent.getKeyCode()));
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -129,7 +129,7 @@ public class BoulderDashView implements Runnable, KeyListener, IView {
 			return ControllerOrder.UP;
 			
 		default:
-			return ControllerOrder.NONE;
+			return ControllerOrder.NOP;
 		}
 	}
 

@@ -1,7 +1,6 @@
 package entity.strategy;
 
 import entity.Map;
-import entity.mobile.Ennemy;
 import entity.mobile.MobileEntity;
 
 public class EnnemyStrategy {

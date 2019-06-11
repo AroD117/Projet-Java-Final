@@ -6,19 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import entity.Entity;
-import entity.motionless.Exit;
 import entity.motionless.MotionlessEntityFactory;
-import entity.motionless.UnbreakableWall;
 import entity.Map;
-import entity.Permeability;
 import entity.mobile.*;
 
 
-/**
- * The Class DAOHelloWorld.
- *
- * @author Quentin Amram
- */
+
 public class DAOMap {
 
 	private final Connection connection;
@@ -77,15 +70,12 @@ public class DAOMap {
 				
 					tempMap.setOnMapXY(MotionlessEntityFactory.getFromDBSymbol(ch), x, y);
 
-					if(ch == 'e') {
-						tempMap.add(new Ennemy(x, y, tempMap));
-					}
 					if(ch == 'd') {
 						tempMap.add(new Diamond(x, y, tempMap));
 						tempMap.increaseDiamondCount();
 					}
 					if(ch == 'c') {
-						tempMap.add(new Boulder(x, y, tempMap));
+						tempMap.add(new Rock(x, y, tempMap));
 					}
 					
 				
